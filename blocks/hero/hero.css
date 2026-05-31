@@ -52,6 +52,14 @@
   transition: width .4s ease-in-out;
 }
 
+/* Left-aligned layouts: the title underline hugs the left like the title. */
+.hero.image-left h1::after,
+.hero.image-right h1::after,
+.hero.image-background-text-left h1::after,
+.hero.image-background-text-right h1::after {
+  margin-left: 0;
+}
+
 /* Remove underline when class applied */
 .hero.removeunderline h1::after,
 .hero.removeunderline h2::after,
@@ -318,6 +326,10 @@ picture {
 .hero.image-left h1,.hero.image-right h1{
   color: var(--text-color);
   text-shadow: unset;
+  text-align: left;
+  margin: 0;
+  width: 100%;
+  max-width: none;
 }
 
 .hero.image-background-text-left h1,
@@ -609,4 +621,45 @@ picture {
 
 .hero.block.overlay .button-container.cta-link a.button::after  ,.hero.image-background-text-left .button-container.cta-link a.button::after,.hero.image-background-text-right .button-container.cta-link a.button::after  {
   color: var(--text-light);
+}
+
+/* --------------------------
+   Badge / Highlight pill
+--------------------------- */
+.hero .hero__badge {
+  display: flex;
+  align-items: center;
+  width: fit-content;
+  /* Centered by default so it matches the centered title in the overlay,
+     asset-top and asset-bottom layouts. Auto side margins center a
+     fit-content block; the left-aligned layouts override this below. */
+  margin: 0 auto 12px;
+  padding: 7px 18px;
+  border-radius: 100px;
+  font-size: 15px;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  color: var(--text-light);
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* Left-aligned layouts: the badge hugs the left edge like the title/text. */
+.hero.image-left .hero__badge,
+.hero.image-right .hero__badge,
+.hero.image-background-text-left .hero__badge,
+.hero.image-background-text-right .hero__badge {
+  margin-left: 0;
+  margin-right: auto;
+}
+
+/* Light text-panel layouts (dark title): badge uses dark text + a faint
+   dark chip to stay legible. */
+.hero.image-left .hero__badge,
+.hero.image-right .hero__badge,
+.hero.image-top .hero__badge,
+.hero.image-bottom .hero__badge {
+  color: var(--text-color);
+  background: rgba(0, 0, 0, 0.08);
 }

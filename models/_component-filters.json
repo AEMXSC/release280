@@ -16,6 +16,7 @@
       "carousel",
       "columns",
       "contentfragment",
+      "download-list",
       "dm-asset",
       "dm-template",
       "embed-adaptive-form",
@@ -33,6 +34,7 @@
       "teaser",
       "text",
       "title",
+      "title-block",
       "video"
     ]
   },
@@ -55,8 +57,9 @@
       "dm-asset",
       "dm-template",
       "image",
-      "text",      
+      "text",
       "title",
+      "title-block",
       "video"
     ]
   }
