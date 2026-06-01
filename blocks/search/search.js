@@ -367,6 +367,7 @@ function buildExcludedPathMatcher(excludeRaw) {
 
 // AEM servlet: full-text search inside PDF assets (returns path + matching line).
 async function fetchPdfSearchResults(keyword) {
+  /*
   const q = String(keyword || '').trim();
   if (q.length < 3) return [];
 
@@ -417,6 +418,8 @@ async function fetchPdfSearchResults(keyword) {
     console.warn('[search] readpdf fetch failed', e);
     return [];
   }
+  */
+  return [];
 }
 
 // Merge PDF text hits into the search dataset without duplicating DAM assets.
